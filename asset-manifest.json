@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/teste-snakegame/static/css/main.a5684d4e.css",
-    "main.js": "/teste-snakegame/static/js/main.d9680567.js",
+    "main.css": "/teste-snakegame/static/css/main.041ba188.css",
+    "main.js": "/teste-snakegame/static/js/main.867bda1f.js",
     "static/js/453.028da8af.chunk.js": "/teste-snakegame/static/js/453.028da8af.chunk.js",
     "static/media/pou-eating.mp3": "/teste-snakegame/static/media/pou-eating.a86275f218fc77e5dd27.mp3",
     "index.html": "/teste-snakegame/index.html",
-    "main.a5684d4e.css.map": "/teste-snakegame/static/css/main.a5684d4e.css.map",
-    "main.d9680567.js.map": "/teste-snakegame/static/js/main.d9680567.js.map",
+    "main.041ba188.css.map": "/teste-snakegame/static/css/main.041ba188.css.map",
+    "main.867bda1f.js.map": "/teste-snakegame/static/js/main.867bda1f.js.map",
     "453.028da8af.chunk.js.map": "/teste-snakegame/static/js/453.028da8af.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5684d4e.css",
-    "static/js/main.d9680567.js"
+    "static/css/main.041ba188.css",
+    "static/js/main.867bda1f.js"
   ]
 }

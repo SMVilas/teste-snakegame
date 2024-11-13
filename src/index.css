@@ -7,7 +7,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Ajuste de tamanho de texto (compatibilidade entre navegadores) */
+* {
+  -webkit-text-size-adjust: none; /* Para navegadores baseados em Webkit */
+  -ms-text-size-adjust: none; /* Para IE antigo */
+  text-size-adjust: none; /* Para todos os navegadores modernos */
+}
+
+/* Controle de seleção de texto */
+* {
+  user-select: none;  /* Impede seleção de texto */
+  -webkit-user-select: none; /* Para Safari */
 }

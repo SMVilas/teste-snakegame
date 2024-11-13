@@ -93,7 +93,7 @@ const App = () => {
             }, 200);
             return () => clearInterval(gameLoop);
         }
-    }, [snake, direction, gameOver]);
+    }, [snake, direction, gameOver, drawGame, moveSnake]);
 
     // Lidar com os eventos de teclado
     useEffect(() => {

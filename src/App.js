@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
-import audioFile from './assets/pou-eating.mp3'; // Importe o arquivo de áudio
+import eatingSound from './assets/pou-eating.mp3'; // Som para quando comer a comida
+import collisionSound from './assets/morri.mp3'; // Som de colisão
+import gameOverSound from './assets/pou-estourado.mp3'; // Som de game over
 
 const App = () => {
     const canvasRef = useRef(null);
@@ -9,7 +11,9 @@ const App = () => {
     const [food, setFood] = useState(getRandomFood());
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false); 
-    const audio = useRef(new Audio(audioFile));
+    const eatingAudio = useRef(new Audio(eatingSound));
+    const collisionAudio = useRef(new Audio(collisionSound));
+    const gameOverAudio = useRef(new Audio(gameOverSound));
 
     // Função para gerar posição aleatória para a comida
     function getRandomPosition() {
@@ -62,7 +66,7 @@ const App = () => {
             // Verifica se a cobra comeu a comida
             if (head.x === food.x && head.y === food.y) {
                 setScore((prev) => prev + 10);
-                audio.current.play(); // Toca o áudio
+                eatingAudio.current.play(); // Toca o áudio de comer a comida
                 setFood(getRandomFood());
                 return newSnake;
             } else {
@@ -81,6 +85,7 @@ const App = () => {
         const selfCollision = snake.slice(0, -1).some((segment) => segment.x === head.x && segment.y === head.y);
 
         if (wallCollision || selfCollision) {
+            collisionAudio.current.play(); // Toca o som de colisão
             setGameOver(true);
         }
     };
@@ -92,6 +97,11 @@ const App = () => {
                 moveSnake();
             }, 200);
             return () => clearInterval(gameLoop);
+        } else {
+            // Aguarda o som de colisão terminar e toca o som de game over
+            setTimeout(() => {
+                gameOverAudio.current.play(); // Toca o som de game over quando o jogo acabar
+            }, collisionAudio.current.duration * 1000); // O tempo de duração do som de colisão
         }
     }, [snake, direction, gameOver, drawGame, moveSnake]);
 
